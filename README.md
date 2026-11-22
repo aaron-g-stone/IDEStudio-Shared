@@ -10,8 +10,9 @@ Splunk add-on both compile, so the two read and write the same files the same wa
 | `SimpleXML.swift` | Simple XML dashboards (`<dashboard version="1.1">`, `<form>`), keeping what it does not model as raw XML |
 | `StudioDashboard.swift` | Dashboard Studio dashboards: the XML wrapper and its JSON definition, blocks, inputs and checks |
 | `Navigation.swift` | An app's navigation bar (`default/data/ui/nav/default.xml`) |
+| `AddonSignature.swift` | An add-on's `signature.json`: the SHA-256 of each file and an Ed25519 signature over them, its id and version; building the signed message and checking a folder against it (signing itself is the release tool's) |
 
-Foundation only; macOS 14 or later.
+Foundation and CryptoKit only; macOS 14 or later.
 
 ## Using it
 
